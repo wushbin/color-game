@@ -3,10 +3,10 @@
 <head>
 	<title>Color Game</title>
 	<link rel="stylesheet" type="text/css" href="colorGame.css">
-</head>
-<body>
 	<script src="https://connect.facebook.net/en_US/fbinstant.6.2.js"></script>
 	<script type="text/javascript" src = "colorGame.js"></script>
+</head>
+<body>
 	<!-- <script type="text/javascript">
 		window.onload = function() {
 			FBInstant.initializeAsync().then(function() {
@@ -35,16 +35,6 @@
         	game.init();
       	}
 	</script> -->
-	<script>
-		function startGame() {
-			// start game
-				var game = new gameplayScene(document);
-				game.init();
-		}
-		console.log(document.querySelectorAll("#reset"));
-		startGame();
-	</script>
-
 <h1>
 	The Great
 	<br> 
@@ -67,5 +57,34 @@
 	<div class = "square"></div>
 	<div class = "square"></div>
 </div>
+
+<script type="text/javascript">
+	window.onload = function() {
+		FBInstant.initializeAsync().then(function() {
+			FBInstant.startGameAsync().then(function() {
+				var contextId = FBInstant.context.getID();
+				var contextType = FBInstant.context.getType();
+				var playerName = FBInstant.player.getName();
+				var playerPic = FBInstant.player.getPhoto();
+				var playerId = FBInstant.player.getID();
+				console.log(contextId);
+				console.log(contextType);
+				console.log(playerName);
+				console.log(playerPic);
+				console.log(playerId);
+				colorGame.start();
+			});
+		});
+		
+		FBInstant.startGameAsync().then(function() {
+			startGame();   
+		});
+	};
+	function startGame() {
+	// start game
+		var game = new gameplayScene(FBInstant);
+		game.init();
+	}
+</script>
 </body>
 </html>
