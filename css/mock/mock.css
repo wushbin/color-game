@@ -12,15 +12,12 @@
   border: 2px solid #3b5998;
   box-shadow: 5px 5px 2px #888888;
 }
-
 .mockDialog h3 {
   color:#00f;
 }
-
 .mockDialog p {
   color:#000;
 }
-
 .mockDialog input {
   background-color: #3b5998;
   color: #fff;

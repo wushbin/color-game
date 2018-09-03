@@ -87,7 +87,6 @@ function gameplayScene() {
 		var random = Math.floor(Math.random() * colors.length);
 		return colors[random];
 	}
-
 	generateRandomColors = function(num) {
 		var arr = [];
 		for (var i = 0; i < num; i++) {
