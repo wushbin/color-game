@@ -4,22 +4,13 @@ function gameplayScene() {
 	var colors = [];
 	var pickedColor;
 	var squares = document.querySelectorAll(".square");
-	console.log(squares);
 	var colorDis = document.getElementById("colorDis");
-	console.log(colorDis);
 	var messageDis = document.querySelector("#message");
-	console.log(messageDis);
 	var h1 = document.querySelector("h1");
-	console.log(h1);
 	var easyBtn = document.querySelector("#easyBtn");
-	console.log(easyBtn);
 	var hardBtn = document.querySelector("#hardBtn");
-	console.log(hardBtn);
 	var modeBtn = document.querySelectorAll(".mode");
-	console.log(modeBtn);
 	var resetButton = document.querySelector("#reset");
-	console.log(resetButton);
-	
 	resetButton.addEventListener("click", function(){
 		reset();
 	} );
@@ -28,14 +19,9 @@ function gameplayScene() {
 	
 	// init();
 	this.init = function () {
-		console.log("message text")
-		console.log(messageDis);
 		setupModeButtons();
 		setupSquares();
 		reset();
-		console.log("message text")
-		console.log(messageDis);
-		
 	}
 
 	setupModeButtons = function(){
@@ -74,8 +60,6 @@ function gameplayScene() {
 	}
 
 	reset = function(){
-		console.log("reset message text")
-		console.log(messageDis);
 		messageDis.textContent = "";
 		this.textContent = "new colors"
 		colors = generateRandomColors(numberOfSquares);
